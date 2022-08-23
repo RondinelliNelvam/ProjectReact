@@ -1,5 +1,10 @@
+import "./Banner.css";
 function Banner() {
-  return <img src="/image/banner.png" alt="Um banner" />;
+  return (
+    <header className="banner">
+      <img src="/image/banner.png" alt="Um banner" />
+    </header>
+  );
 }
 
 export default Banner;
