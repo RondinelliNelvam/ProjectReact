@@ -31,7 +31,9 @@ function App() {
           nome={team.nome}
           colorPrim={team.colorPrim}
           colorSec={team.colorSec}
-          colaboradores={colaboradores}
+          colaboradores={colaboradores.filter(
+            (colaborador) => colaborador.team == team.nome
+          )}
         />
       ))}
     </div>
