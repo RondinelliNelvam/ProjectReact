@@ -13,16 +13,17 @@ function App() {
     { nome: "time6", colorPrim: "#FFBA29", colorSec: "#FFEEDF" },
   ];
 
-  const [contributors, setContributor] = useState([]);
-  const newContributor = (contributor) => {
-    console.log(contributor);
-    setContributor(...contributors, contributor);
+  const [colaboradores, setColaboradores] = useState([]);
+  const newContributor = (colaborador) => {
+    console.log(colaborador);
+    setColaboradores([...colaboradores, colaborador]);
   };
   return (
     <div className="App">
       <Banner />
       <Forms
-        registerContributor={(contributor) => newContributor(contributor)}
+        times={teams.map((time) => time.nome)}
+        registerContributor={(colaborador) => newContributor(colaborador)}
       />
       {teams.map((team) => (
         <Team
@@ -30,6 +31,7 @@ function App() {
           nome={team.nome}
           colorPrim={team.colorPrim}
           colorSec={team.colorSec}
+          colaboradores={colaboradores}
         />
       ))}
     </div>

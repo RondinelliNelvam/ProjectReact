@@ -5,15 +5,14 @@ import TextField from "../TextField/TextField";
 import "./Forms.css";
 
 const Forms = (props) => {
-  const times = ["time1", "time2", "time3", "time4", "time5", "time6"];
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
-  const [time, setTime] = useState("");
+  const [team, setteam] = useState("");
 
   const onSave = (event) => {
     event.preventDefault();
-    props.registerContributor({ nome, cargo, imagem, time });
+    props.registerContributor({ nome, cargo, imagem, team });
   };
   return (
     <section className="formulario">
@@ -42,9 +41,9 @@ const Forms = (props) => {
         <SuspenseList
           obrigatorio={true}
           label="time"
-          itens={times}
-          valor={time}
-          aoAlterado={(valor) => setTime(valor)}
+          itens={props.times}
+          valor={team}
+          aoAlterado={(valor) => setteam(valor)}
         />
         <Button texto="Criar Card" />
       </form>

@@ -1,3 +1,4 @@
+import Colaborator from "../Colaborator/Colaborator";
 import "./Team.css";
 
 const Team = (props) => {
@@ -6,6 +7,9 @@ const Team = (props) => {
   return (
     <section className="time" style={css}>
       <h3 style={bordercss}>{props.nome}</h3>
+      {props.colaboradores.map((colaborador) => (
+        <Colaborator />
+      ))}
     </section>
   );
 };
