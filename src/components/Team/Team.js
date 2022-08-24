@@ -9,7 +9,7 @@ const Team = (props) => {
       <h3 style={bordercss}>{props.nome}</h3>
       <div className="colaboradores">
         {props.colaboradores.map((colaborador) => (
-          <Colaborator
+          <Colaborator key={colaborador.nome}
             nome={colaborador.nome}
             cargo={colaborador.cargo}
             imagem={colaborador.imagem}
