@@ -13,6 +13,10 @@ const Forms = (props) => {
   const onSave = (event) => {
     event.preventDefault();
     props.registerContributor({ nome, cargo, imagem, team });
+    setNome('')
+    setCargo('')
+    setImagem('')
+    setteam('')
   };
   return (
     <section className="formulario">
