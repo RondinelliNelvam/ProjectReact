@@ -4,7 +4,7 @@ import { SuspenseList } from "../SuspenseList/SuspenseList";
 import TextField from "../TextField/TextField";
 import "./Forms.css";
 
-const Forms = () => {
+const Forms = (props) => {
   const times = ["time1", "time2", "time3", "time4", "time5", "time6"];
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
@@ -13,7 +13,7 @@ const Forms = () => {
 
   const onSave = (event) => {
     event.preventDefault();
-    console.log("Valor obtido :", nome, imagem, cargo, time);
+    props.registerContributor({ nome, cargo, imagem, time });
   };
   return (
     <section className="formulario">
