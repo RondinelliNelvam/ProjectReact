@@ -9,10 +9,11 @@ const Forms = () => {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
+  const [time, setTime] = useState("");
 
   const onSave = (event) => {
     event.preventDefault();
-    console.log("Form foi submetido =>", nome, cargo, imagem);
+    console.log("Valor obtido :", nome, imagem, cargo, time);
   };
   return (
     <section className="formulario">
@@ -38,7 +39,13 @@ const Forms = () => {
           valor={imagem}
           onAlterado={(valor) => setImagem(valor)}
         />
-        <SuspenseList label="time" itens={times} />
+        <SuspenseList
+          obrigatorio={true}
+          label="time"
+          itens={times}
+          valor={time}
+          aoAlterado={(valor) => setTime(valor)}
+        />
         <Button texto="Criar Card" />
       </form>
     </section>

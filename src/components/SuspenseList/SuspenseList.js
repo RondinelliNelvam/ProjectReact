@@ -4,7 +4,11 @@ const SuspenseList = (props) => {
   return (
     <div className="suspense-list">
       <label>{props.label}</label>
-      <select>
+      <select
+        onChange={(event) => props.aoAlterado(event.target.value)}
+        required={props.required}
+        value={props.value}
+      >
         {props.itens.map((item) => (
           <option key={item}>{item}</option>
         ))}
